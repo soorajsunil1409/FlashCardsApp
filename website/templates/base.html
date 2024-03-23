@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='base.css') }}">
+    {% block style_scripts %}{% endblock %}
+</head>
+<body data-bs-theme="dark">
+	<div class="navbar">
+		<li>
+			<ul>
+				<a href="/" id="heading">Flash Card Learning</a>
+			</ul>
+			<ul>
+				<select>
+					<option selected value="0">Hindi</option>
+					<option value="1">Malayalam</option>
+					<option value="2">Tamil</option>
+					<option value="3">Telugu</option>
+				  </select>
+			</ul>
+		</li>
+	</div>
+
+    <!-- <div class="flashcard">
+      <div class="front">
+        <h2>Front Side</h2>
+        <p>This is the front side of the flashcard.</p>
+      </div>
+      <div class="back">
+        <h2>Back Side</h2>
+        <p>This is the back side of the flashcard.</p>
+      </div>
+    </div> -->
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

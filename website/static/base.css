@@ -1,0 +1,145 @@
+/* 
+.flashcard {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.5s;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flashcard:hover .front {
+  transform: rotateY(-180deg);
+}
+
+.flashcard:hover .back {
+  transform: rotateY(0deg);
+}
+*/
+
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+select {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  
+  width: 250px;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em, 
+  linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+
+body {
+  margin: 0;
+  background-color: #19212e;
+  display: flex;
+  flex-flow: row;
+}
+
+.navbar li {
+  display: flex;
+  flex-flow: column;
+  background-color: #1b283b;
+  height: 100vh;
+  align-items: center;
+}
+
+.navbar li ul {
+  padding: 30px;
+  margin: 0;
+}
+
+.navbar li ul a {
+  text-decoration: 0;
+}
+
+#heading {
+  padding: 15px;
+  color: rgb(0, 223, 104);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#rem {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(76, 223, 234);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.category-holder {
+  display: flex;
+  flex-flow: row;
+  margin: 20px;
+}
+
+.cat {
+  transition: all 0.4s;
+}
+
+.cat:hover {
+  transform: scale(1.05);
+}
+
+.cat form {
+  background-color: #4dae50;
+  margin: 20px;
+  height: 30vh;
+  width: 21.5vw;
+  border-radius: 20px;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+}
+
+.cat span {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cat form button {
+  border-radius: 10px;
+  border: 0;
+  width: calc(21.5vw - 40px);
+  height: 60px;
+  font-size: 20px;
+  margin-top: 110px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
