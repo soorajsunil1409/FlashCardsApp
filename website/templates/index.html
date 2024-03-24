@@ -3,32 +3,28 @@
 {% block content %}
 
 <div class="category-holder">
-    <div class="cat">
-        <form action="" method="post">
+    <form class="body-cont" action="{{ url_for('views.learn') }}" id="main-form" method="POST">
+        <div class="cat">
             <span>Objects</span>
-            <button type="submit">
+            <button type="submit" name="button" value="objects">
                 Start Learning
             </button>
-        </form>
-    </div>
+        </div>
     
-    <div class="cat">
-        <form action="" method="post">
+        <div class="cat">
             <span>Common Words</span>
-            <button type="submit">
+            <button type="submit" name="button" value="words">
                 Start Learning
             </button>
-        </form>
-    </div>
+        </div>
     
-    <div class="cat">
-        <form action="" method="post">
+        <div class="cat">
             <span>Animals</span>
-            <button type="submit">
+            <button type="submit" name="button" value="animals">
                 Start Learning
             </button>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 
 {% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="flashcards">
+
+    <div class="arrow arrowl">
+        <a href="#" onclick="plusSlides(-1)">&#x203A;</a>
+    </div>
+
+    <div class="fc">
+        <div class="spacer"></div>
+        <div class="main-fc">
+            <div class="fc-inner">
+                <div class="fc-front">
+                    <div class="img">1</div>
+                </div>
+                <div class="fc-back">
+                    1
+                </div>
+            </div>
+        </div>
+        <div class="main-fc">
+            <div class="fc-inner">
+                <div class="fc-front">
+                    <div class="img">2</div>
+                </div>
+                <div class="fc-back">
+                    2
+                </div>
+            </div>
+        </div>
+        <div class="main-fc">
+            <div class="fc-inner">
+                <div class="fc-front">
+                    <div class="img">3</div>
+                </div>
+                <div class="fc-back">
+                    3
+                </div>
+            </div>
+        </div>
+        <div class="main-fc">
+            <div class="fc-inner">
+                <div class="fc-front">
+                    <div class="img">4</div>
+                </div>
+                <div class="fc-back">
+                    4
+                </div>
+            </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+
+    <div class="arrow arrowr">
+        <a href="#" onclick="plusSlides(1)">&#x203A;</a>
+    </div>
+
+</div>
+
+
+<script>    
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+      
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("main-fc");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+    
+</script>
+
+{% endblock %}
+

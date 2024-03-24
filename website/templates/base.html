@@ -7,19 +7,19 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='base.css') }}">
     {% block style_scripts %}{% endblock %}
 </head>
-<body data-bs-theme="dark">
+<body>
 	<div class="navbar">
 		<li>
 			<ul>
 				<a href="/" id="heading">Flash Card Learning</a>
 			</ul>
 			<ul>
-				<select>
-					<option selected value="0">Hindi</option>
-					<option value="1">Malayalam</option>
-					<option value="2">Tamil</option>
-					<option value="3">Telugu</option>
-				  </select>
+				<select name="lang" id="select" form="main-form">
+					<option value="Hindi">Hindi</option>
+					<option value="Malayalam">Malayalam</option>
+					<option value="Tamil">Tamil</option>
+					<option value="Telugu">Telugu</option>
+				</select>
 			</ul>
 		</li>
 	</div>
@@ -35,9 +35,10 @@
       </div>
     </div> -->
 
-    <div class="content">
-        {% block content %}
-        {% endblock %}
-    </div>
+		<div class="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</form>
 </body>
 </html>

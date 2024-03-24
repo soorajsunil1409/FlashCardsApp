@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 
 views = Blueprint('views', __name__)
 
@@ -7,18 +7,14 @@ views = Blueprint('views', __name__)
 def index():
     return render_template("index.html")
 
-@views.route("/learn/hindi")
-def learn_hindi():
-    return render_template("hindi.html")
+@views.route("/learn", methods=["POST", "GET"])
+def learn():
+    if request.method == 'POST':
+        res = request.form
 
-@views.route("/learn/malayalam")
-def learn_malayalam():
-    return render_template("malayalam.html")
+        language = res["lang"]
+        learn_type = res["button"]
 
-@views.route("/learn/tamil")
-def learn_tamil():
-    return render_template("tamil.html")
-
-@views.route("/learn/telugu")
-def learn_telugu():
-    return render_template("telugu.html")
+        print(language, learn_type)
+        
+    return render_template("learn.html")

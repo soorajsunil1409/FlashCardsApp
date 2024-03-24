@@ -57,13 +57,22 @@ select {
   cursor: pointer;
 }
 
-
-
 body {
   margin: 0;
   background-color: #19212e;
   display: flex;
   flex-flow: row;
+}
+
+.body-cont {
+  margin: 0;
+  background-color: #19212e;
+  display: flex;
+  flex-flow: row;
+}
+
+.navbar {
+  width: 350px;
 }
 
 .navbar li {
@@ -112,7 +121,7 @@ body {
   transform: scale(1.05);
 }
 
-.cat form {
+.cat {
   background-color: #4dae50;
   margin: 20px;
   height: 30vh;
@@ -132,7 +141,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.cat form button {
+.cat button {
   border-radius: 10px;
   border: 0;
   width: calc(21.5vw - 40px);
@@ -142,4 +151,90 @@ body {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
+}
+
+.flashcards {
+  display: flex;
+  flex-flow: row;
+  height: 100vh;
+  width: calc(100vw - 350px);
+  max-width: calc(100vw - 350px);
+}
+
+.spacer {
+  margin-left: 90px;
+}
+
+.fc {
+  width: 95%;
+  display: flex;
+  flex-flow: row;
+  overflow-x: scroll;
+}
+
+.main-fc {
+  background-color: transparent;
+  height: calc(100% - 204px);
+  min-width: 380px;
+  margin: 100px;
+  margin-left: 180px;
+  margin-right: 150px;
+  perspective: 1000px;
+}
+
+.fc-inner {
+  background-color: #4dae50;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  height: calc(100% - 204px);
+  min-width: 380px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.fc-front, .fc-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.main-fc:hover .fc-inner {
+  transform: rotateY(180deg);
+}
+
+.fc-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.img {
+  height: 300px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  margin: 20px;
+}
+
+.arrow {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  font-size: 200px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.arrow a {
+  text-decoration: 0;
+  color: #4dae50;
+}
+
+.arrowl {
+  margin-top: 79px;
+  transform: rotate(-180deg);
 }
