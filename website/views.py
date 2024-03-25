@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect
 import os
 import csv
+import pandas as pd
 
 views = Blueprint('views', __name__)
 
@@ -22,17 +23,16 @@ def get_images(typ=None, lang="en") -> dict:
         trans_file_path = "./website/static/data/tamil.csv"
     elif lang == "mal":
         trans_file_path = "./website/static/data/malayalam.csv"
-
-    with open(trans_file_path, "r") as file:
-        reader = csv.reader(file)
-        next(reader)
         
-        if typ == "objects":
-            trans_words = [i[0] for i in reader]
-        elif typ == "food":
-            trans_words = [i[1] for i in reader]
-        elif typ == "animals":
-            trans_words = [i[2] for i in reader]
+    file = pd.read_csv(trans_file_path, encoding="utf-8")
+    print()
+        
+    if typ == "objects":
+        trans_words = file["Object"].to_list()
+    elif typ == "food":
+        trans_words = file["Food"].to_list()
+    elif typ == "animals":
+        trans_words = file["Animal"].to_list()
 
 
     print("\n".join(i.split(".")[0] for i in dir_list))
@@ -41,9 +41,7 @@ def get_images(typ=None, lang="en") -> dict:
         file_path = os.path.join("/", "images", typ, file)
         word = file.split(".")[0].capitalize()
 
-        # print(trans_word)
         res[word] = [trans_word, file_path]
-        # res[word] = file_path
 
 
     return res
