@@ -16,13 +16,14 @@ def get_images(typ=None, lang="en") -> dict:
     trans_file_path = ""
 
     if lang == "hin":
-        trans_file_path = "./website/static/data/hindi.csv"
+        os.path.join(".", "website", "static", "data", "hindi.csv")
+        trans_file_path = os.path.join(".", "website", "static", "data", "hindi.csv")
     elif lang == "tel":
-        trans_file_path = "./website/static/data/telugu.csv"
+        trans_file_path = os.path.join(".", "website", "static", "data", "telugu.csv")
     elif lang == "tam":
-        trans_file_path = "./website/static/data/tamil.csv"
+        trans_file_path = os.path.join(".", "website", "static", "data", "tamil.csv")
     elif lang == "mal":
-        trans_file_path = "./website/static/data/malayalam.csv"
+        trans_file_path = os.path.join(".", "website", "static", "data", "malayalam.csv")
         
     file = pd.read_csv(trans_file_path, encoding="utf-8")
     print()
