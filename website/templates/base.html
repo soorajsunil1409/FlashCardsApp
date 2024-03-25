@@ -14,12 +14,8 @@
 				<a href="/" id="heading">Flash Card Learning</a>
 			</ul>
 			<ul>
-				<select name="lang" id="select" form="main-form">
-					<option value="Hindi">Hindi</option>
-					<option value="Malayalam">Malayalam</option>
-					<option value="Tamil">Tamil</option>
-					<option value="Telugu">Telugu</option>
-				</select>
+				{% block selectMenu %}
+				{% endblock %}
 			</ul>
 		</li>
 	</div>

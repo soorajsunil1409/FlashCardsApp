@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{% block selectMenu %}
+
+<select name="lang" id="select" form="main-form">
+    <option value="Hindi">Hindi</option>
+    <option value="Malayalam">Malayalam</option>
+    <option value="Tamil">Tamil</option>
+    <option value="Telugu">Telugu</option>
+</select>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="category-holder">
@@ -12,8 +23,8 @@
         </div>
     
         <div class="cat">
-            <span>Common Words</span>
-            <button type="submit" name="button" value="words">
+            <span>Food</span>
+            <button type="submit" name="button" value="food">
                 Start Learning
             </button>
         </div>

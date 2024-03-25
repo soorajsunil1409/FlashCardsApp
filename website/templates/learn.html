@@ -10,46 +10,25 @@
 
     <div class="fc">
         <div class="spacer"></div>
+        {% for key, value in result.items() %}
         <div class="main-fc">
             <div class="fc-inner">
                 <div class="fc-front">
-                    <div class="img">1</div>
+                    <div class="img">
+                        <img src="{{ url_for('static', filename=value[1]) }}" alt="">
+                    </div>
+                    <h1 class="image-name">
+                        {{ value[0] }}
+                    </h1>
                 </div>
                 <div class="fc-back">
-                    1
+                    <h1 class="image-name">
+                        {{ key }}
+                    </h1>
                 </div>
             </div>
         </div>
-        <div class="main-fc">
-            <div class="fc-inner">
-                <div class="fc-front">
-                    <div class="img">2</div>
-                </div>
-                <div class="fc-back">
-                    2
-                </div>
-            </div>
-        </div>
-        <div class="main-fc">
-            <div class="fc-inner">
-                <div class="fc-front">
-                    <div class="img">3</div>
-                </div>
-                <div class="fc-back">
-                    3
-                </div>
-            </div>
-        </div>
-        <div class="main-fc">
-            <div class="fc-inner">
-                <div class="fc-front">
-                    <div class="img">4</div>
-                </div>
-                <div class="fc-back">
-                    4
-                </div>
-            </div>
-        </div>
+        {% endfor %}
         <div class="spacer"></div>
     </div>
 
@@ -60,7 +39,7 @@
 </div>
 
 
-<script>    
+<script>
     let slideIndex = 1;
     showSlides(slideIndex);
 
