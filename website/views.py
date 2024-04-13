@@ -39,7 +39,7 @@ def get_images(typ=None, lang="en") -> dict:
     print("\n".join(i.split(".")[0] for i in dir_list))
 
     for file, trans_word in zip(dir_list, trans_words):
-        file_path = os.path.join("/", "images", typ, file)
+        file_path = f"/images/{typ}/{file}"
         word = file.split(".")[0].capitalize()
 
         res[word] = [trans_word, file_path]
