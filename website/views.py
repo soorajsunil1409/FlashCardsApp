@@ -6,6 +6,9 @@ import pandas as pd
 views = Blueprint('views', __name__)
 
 
+##########################################
+# Function to get images from the folder #
+##########################################
 def get_images(typ=None, lang="en") -> dict:
     if type == None: return None
 
@@ -47,11 +50,20 @@ def get_images(typ=None, lang="en") -> dict:
 
     return res
 
+
+
+#######################
+# Route to index page #
+#######################
 @views.route("/")
 def index():
     return render_template("index.html")
 
 
+
+#######################
+# Route to learn page #
+#######################
 @views.route("/learn", methods=["POST", "GET"])
 def learn():
     result = {}
